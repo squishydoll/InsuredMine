@@ -28,16 +28,16 @@ export class LoginComponent implements OnInit {
     let url = '';
     let finalUrlValue = '';
     this.activatedRoute.queryParamMap.subscribe(qParams => {
-      url = qParams.get('redirectTo');
+      url = qParams.get('redirectTo') ? qParams.get('redirectTo') : '/home';
       finalUrlValue = url || '/home';
       this.authSevice.logIn(this.userid.value, this.password.value).subscribe(
         (output: any) => {
           console.log(output.id);
           this.authSevice.loginState.next({
-            id: output.id,
             firstName: output.firstName,
             isLoggedIn: true
           });
+          localStorage.setItem('id', output.id);
           localStorage.setItem('token', output.token);
           this.router.navigate([finalUrlValue]);
         },

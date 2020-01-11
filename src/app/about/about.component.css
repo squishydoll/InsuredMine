@@ -1,6 +1,13 @@
+header {
+  background-image: url('https://images.unsplash.com/photo-1577843012375-e30ead91b2a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
+  object-fit: cover;
+}
+.overlay {
+  background: rgba(18, 25, 46, 0.8);
+  transition: all 0.3s;
+}
 .headingDiv {
   padding: 8rem;
-  background: #4a536b;
   color: white;
   font-size: 5rem;
   text-align: center;
@@ -17,12 +24,15 @@ ul {
 }
 
 .keyMemberHeading {
-  padding: 3rem;
   color: rgb(100, 100, 100);
   font-size: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-img.keyMember {
-  padding: 2rem;
+.keyMember {
+  margin: auto 3rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }

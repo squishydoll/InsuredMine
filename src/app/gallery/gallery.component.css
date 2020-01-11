@@ -1,19 +1,18 @@
-main {
-  margin: 4rem;
-  transition: all 0.2s;
+header {
+  background-image: url('https://images.unsplash.com/photo-1577843012375-e30ead91b2a9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
+  object-fit: cover;
 }
-h3 {
-  display: flex;
-  justify-content: center;
-  color: rgb(9, 9, 114);
-  font-size: 5rem;
-  margin-bottom: 5rem;
-}
-h3:hover {
-  transform: skewY(2deg) skewX(15deg) scale(1.1);
-  text-shadow: 0.5rem 1rem 2rem rgba(black, 0.2);
+.overlay {
+  background: rgba(18, 25, 46, 0.8);
+  transition: all 0.3s;
 }
 
+.headingLogin {
+  padding: 8rem;
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
 .container {
   display: grid;
   grid-gap: 4rem 4rem;

@@ -5,3 +5,6 @@ body {
   padding: 0;
   font-family: 'Raleway', sans-serif;
 }
+* {
+  outline: none !important;
+}

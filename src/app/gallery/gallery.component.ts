@@ -10,15 +10,12 @@ import { AuthService } from '../_collaborators/auth.service';
 export class GalleryComponent implements OnInit {
   imageArray;
   id;
-  constructor(private dataService: DataService, private authService: AuthService) {
-    this.authService.loginState.subscribe(el => {
-      this.id = el.id;
-    });
-  }
+  constructor(private dataService: DataService, private authService: AuthService) {}
 
   ngOnInit() {
     this.imageArray = [];
-    this.dataService.getGalleryImages(1).subscribe((output: []) => {
+    this.id = localStorage.getItem('id');
+    this.dataService.getGalleryImages(this.id).subscribe((output: []) => {
       output.forEach(element => {
         console.log(element['content']);
         this.imageArray.push(element['content']);
