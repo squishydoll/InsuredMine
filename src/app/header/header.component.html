@@ -1,8 +1,12 @@
 <nav>
-  <span>{{ username }}</span>
-  <a [routerLink]="['login']" *ngIf="!loginValid">Login</a>
-  <a [routerLink]="[]" *ngIf="loginValid" (click)="logout()">Logout</a>
-  <a [routerLink]="[]" *ngIf="loginValid">Gallery</a>
-  <a [routerLink]="[]">About</a>
-  <a [routerLink]="['home']">Home</a>
+  <span>
+    <span *ngIf="loginValid">Welcome {{ firstName | uppercase }}</span>
+  </span>
+  <div class="wrapper">
+    <a [routerLink]="['login']" *ngIf="!loginValid" routerLinkActive="active">Login</a>
+    <a *ngIf="loginValid" (click)="logout()">Logout</a>
+    <a [routerLink]="['gallery']" *ngIf="loginValid" routerLinkActive="active">Gallery</a>
+    <a [routerLink]="['about']" routerLinkActive="active">About</a>
+    <a [routerLink]="['home']" routerLinkActive="active">Home</a>
+  </div>
 </nav>

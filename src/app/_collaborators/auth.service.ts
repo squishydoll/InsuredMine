@@ -7,15 +7,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn: Subject<boolean>;
   url;
   authenticateUrl;
-  userSubject: Subject<any>;
+  loginState: Subject<any>;
   constructor(private dataService: DataService, private http: HttpClient) {
-    this.url = 'http://localhost:4000/';
-    this.authenticateUrl = this.url + 'users/authenticate';
-    this.userSubject = new Subject();
-    this.isLoggedIn = new Subject();
+    this.url = 'http://localhost:4000';
+    this.authenticateUrl = this.url + '/users/authenticate';
+    this.loginState = new Subject();
   }
 
   logIn(userid: string, password: string) {

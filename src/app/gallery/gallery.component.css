@@ -1,0 +1,38 @@
+main {
+  margin: 4rem;
+  transition: all 0.2s;
+}
+h3 {
+  display: flex;
+  justify-content: center;
+  color: rgb(9, 9, 114);
+  font-size: 5rem;
+  margin-bottom: 5rem;
+}
+h3:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(black, 0.2);
+}
+
+.container {
+  display: grid;
+  grid-gap: 4rem 4rem;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  transition: all 0.2s;
+}
+
+.image {
+  height: 30vh;
+  width: 40vh;
+  box-shadow: -1px 4px 17px -3px rgba(128, 128, 128, 1);
+  border-radius: 2px;
+  outline-offset: 1rem;
+}
+
+.container:hover .image:hover {
+  outline: 0.5rem solid rgb(9, 9, 114);
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(black, 0.5);
+}

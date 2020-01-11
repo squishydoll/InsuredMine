@@ -1,22 +1,29 @@
 nav {
-  height: 4rem;
   width: 100%;
-  background-color: rgb(9, 9, 114);
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: transparent;
+  position: fixed;
 }
 a {
-  width: 8vw;
+  margin: 0 2vw;
   font-size: 1.5rem;
-  padding: 1rem;
   text-decoration: none;
   color: white;
-  float: right;
 }
+
 .active {
-  background-color: rgba(37, 37, 172, 0.6);
+  border-bottom: 2px solid #ff9a8d;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 span {
   color: white;
-  padding: 1rem;
   font-size: 1.5rem;
 }

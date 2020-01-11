@@ -8,20 +8,23 @@ import { AuthService } from '../_collaborators/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  username: string;
+  firstName: string;
   loginValid: boolean;
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.userSubject.subscribe(el => (this.username = el));
-    this.authService.isLoggedIn.subscribe(el => (this.loginValid = el));
+    this.authService.loginState.subscribe(el => {
+      (this.firstName = el.firstName), (this.loginValid = el.isLoggedIn);
+    });
   }
 
   logout() {
     let finalDecision = confirm('Are you sure to logout') ? true : false;
     if (finalDecision) {
-      //this.authService.userSubject.next();
-      this.authService.isLoggedIn.next(false);
+      this.authService.loginState.next({
+        firstName: '',
+        isLoggedIn: false
+      });
       this.authService.logOut();
       this.router.navigate(['']);
     }

@@ -1,12 +1,32 @@
 <main>
+  <div class="headingLogin">Login</div>
   <form [formGroup]="loginForm">
-    <h3>Login</h3>
     <label></label>
-    <input type="text" formControlName="userid" placeholder="Enter Username" /><br />
-    <input type="password" formControlName="password" placeholder="Enter Password" /><br />
-    <button type="submit" (click)="submit()">Login Now</button>
-    <span class="errors" *ngIf="!isValidated">
+    <div>
+      <input
+        type="text"
+        formControlName="userid"
+        placeholder="Enter Username or email"
+      /><br />
+      <span class="errors" *ngIf="userid.touched && userid.hasError('required')">
+        *This is a required field.
+      </span>
+    </div>
+    <div>
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter Password"
+      /><br />
+      <span class="errors" *ngIf="password.touched && password.hasError('required')">
+        *This is a required field.
+      </span>
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid" (click)="submit()">
+      Login Now
+    </button>
+    <div class="errors" *ngIf="!isValidated">
       *Invalid Credentials. Please enter correct id and password.
-    </span>
+    </div>
   </form>
 </main>

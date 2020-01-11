@@ -1,0 +1,28 @@
+.headingDiv {
+  padding: 8rem;
+  background: #4a536b;
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
+div.content {
+  font-size: 1rem;
+  color: gray;
+  text-align: justify;
+}
+p,
+ul {
+  margin: 2rem 4rem;
+  word-wrap: break-word;
+}
+
+.keyMemberHeading {
+  padding: 3rem;
+  color: rgb(100, 100, 100);
+  font-size: 3rem;
+  text-align: center;
+}
+
+img.keyMember {
+  padding: 2rem;
+}

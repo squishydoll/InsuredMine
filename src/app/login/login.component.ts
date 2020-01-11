@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../_collaborators/auth.service';
 @Component({
@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.isValidated = true;
     this.loginForm = new FormGroup({
-      userid: new FormControl(''),
-      password: new FormControl('')
+      userid: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
     });
   }
 
@@ -32,12 +32,19 @@ export class LoginComponent implements OnInit {
       finalUrlValue = url || '/home';
       this.authSevice.logIn(this.userid.value, this.password.value).subscribe(
         (output: any) => {
-          this.authSevice.userSubject.next(output.username);
-          this.authSevice.isLoggedIn.next(true);
+          console.log(output.id);
+          this.authSevice.loginState.next({
+            id: output.id,
+            firstName: output.firstName,
+            isLoggedIn: true
+          });
           localStorage.setItem('token', output.token);
           this.router.navigate([finalUrlValue]);
         },
-        error => console.error(error)
+        error => {
+          this.isValidated = false;
+          console.error(error);
+        }
       );
     });
   }

@@ -1,31 +1,38 @@
-<div *ngIf="logout == true; then logoutTemplate; else homeTemplate">
-  <ng-template #logoutTemplate>
-    <h1>Logged out successfully</h1>
-  </ng-template>
-  <ng-template #homeTemplate>
-    <h1>Username: {{ username }}</h1>
-  </ng-template>
-</div>
-
-<main>
-  <div class="container">
+<section class="container">
+  <div class="overlay">
+    <header class="headerContainer">
+      <div class="divPrimary">Hello</div>
+      <div class="divSecondary">We create awesome photographies and more</div>
+    </header>
+  </div>
+</section>
+<section class="creativity">
+  <div class="contentDiv">
+    <span class="heading">We are so creative</span>
+    <span class="details"
+      >Photography is a way of feeling, of touching, of loving. What you have caught on
+      film is captured forever… It remembers little things, long after you have forgotten
+      everything.</span
+    >
+    <span class="details">
+      To me, photography is an art of observation. It’s about finding something
+      interesting in an ordinary place… I’ve found it has little to do with the things you
+      see and everything to do with the way you see them
+    </span>
+  </div>
+  <div>
     <img
-      class="image"
-      *ngFor="let imagename of imageArray"
-      src="{{ imagename }}"
-      alt="{{ imagename }}"
-    />
-    <img
-      class="image"
-      *ngFor="let imagename of imageArray"
-      src="{{ imagename }}"
-      alt="{{ imagename }}"
-    />
-    <img
-      class="image"
-      *ngFor="let imagename of imageArray"
-      src="{{ imagename }}"
-      alt="{{ imagename }}"
+      class="creativeImage"
+      src="https://images.pexels.com/photos/724994/pexels-photo-724994.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      alt="creative-image"
     />
   </div>
-</main>
+</section>
+<section class="imageContainer">
+  <img
+    *ngFor="let images of sampleImages; index as i"
+    class="sampleImage"
+    src="{{ images }}"
+    alt="Image {{ i }}"
+  />
+</section>

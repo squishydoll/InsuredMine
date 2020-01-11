@@ -1,38 +1,42 @@
-main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 form {
   width: 30%;
 }
-
-h3 {
-  color: rgb(9, 9, 114);
-  font-size: 3rem;
+.headingLogin {
+  padding: 8rem;
+  background: #4a536b;
+  color: white;
+  font-size: 5rem;
   text-align: center;
 }
 input {
   height: 2rem;
   width: 96%;
   padding: 0.5rem;
-  border: 1px solid blue;
+  border-radius: 2px;
+  border: none;
   margin: 1rem;
 }
-
+input::placeholder {
+  color: grey;
+  font-size: 1rem;
+}
 button {
   margin: 1rem;
   height: 3rem;
   width: 100%;
   padding: 0.5rem;
   border: none;
-  margin-left: 1rem;
+  margin: 1rem 1rem 0 1rem;
   background-color: rgb(9, 9, 114);
   color: white;
 }
-
+button:hover {
+  transform: translateY(-3px);
+  background-color: rgba(5, 84, 187, 0.801);
+  box-shadow: 0 1rem 2rem rgba(black, 0.2);
+}
 .errors {
   color: red;
   font-size: 1rem;
+  margin: 1rem 1rem;
 }
