@@ -1,0 +1,8 @@
+<nav>
+  <span>{{ username }}</span>
+  <a [routerLink]="['login']" *ngIf="!loginValid">Login</a>
+  <a [routerLink]="[]" *ngIf="loginValid" (click)="logout()">Logout</a>
+  <a [routerLink]="[]" *ngIf="loginValid">Gallery</a>
+  <a [routerLink]="[]">About</a>
+  <a [routerLink]="['home']">Home</a>
+</nav>

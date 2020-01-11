@@ -1,0 +1,31 @@
+<div *ngIf="logout == true; then logoutTemplate; else homeTemplate">
+  <ng-template #logoutTemplate>
+    <h1>Logged out successfully</h1>
+  </ng-template>
+  <ng-template #homeTemplate>
+    <h1>Username: {{ username }}</h1>
+  </ng-template>
+</div>
+
+<main>
+  <div class="container">
+    <img
+      class="image"
+      *ngFor="let imagename of imageArray"
+      src="{{ imagename }}"
+      alt="{{ imagename }}"
+    />
+    <img
+      class="image"
+      *ngFor="let imagename of imageArray"
+      src="{{ imagename }}"
+      alt="{{ imagename }}"
+    />
+    <img
+      class="image"
+      *ngFor="let imagename of imageArray"
+      src="{{ imagename }}"
+      alt="{{ imagename }}"
+    />
+  </div>
+</main>

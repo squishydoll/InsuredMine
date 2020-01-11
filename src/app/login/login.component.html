@@ -1,0 +1,12 @@
+<main>
+  <form [formGroup]="loginForm">
+    <h3>Login</h3>
+    <label></label>
+    <input type="text" formControlName="userid" placeholder="Enter Username" /><br />
+    <input type="password" formControlName="password" placeholder="Enter Password" /><br />
+    <button type="submit" (click)="submit()">Login Now</button>
+    <span class="errors" *ngIf="!isValidated">
+      *Invalid Credentials. Please enter correct id and password.
+    </span>
+  </form>
+</main>

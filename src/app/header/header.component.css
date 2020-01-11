@@ -1,0 +1,22 @@
+nav {
+  height: 4rem;
+  width: 100%;
+  background-color: rgb(9, 9, 114);
+}
+a {
+  width: 8vw;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  float: right;
+}
+.active {
+  background-color: rgba(37, 37, 172, 0.6);
+}
+
+span {
+  color: white;
+  padding: 1rem;
+  font-size: 1.5rem;
+}

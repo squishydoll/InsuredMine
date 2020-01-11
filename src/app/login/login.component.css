@@ -1,0 +1,38 @@
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 30%;
+}
+
+h3 {
+  color: rgb(9, 9, 114);
+  font-size: 3rem;
+  text-align: center;
+}
+input {
+  height: 2rem;
+  width: 96%;
+  padding: 0.5rem;
+  border: 1px solid blue;
+  margin: 1rem;
+}
+
+button {
+  margin: 1rem;
+  height: 3rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  margin-left: 1rem;
+  background-color: rgb(9, 9, 114);
+  color: white;
+}
+
+.errors {
+  color: red;
+  font-size: 1rem;
+}
